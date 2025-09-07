@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Freelance Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-V7M6qGQZxqW9v0zv5Kp5t7yQmV8lV9k9O+e9S4k2PqK1Yg2p8i8J7YF9lQz8s3q3Bq1p7gqgq+G5KNuXoE2AKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+</head>
+<body>
+<header class="app-header">
+  <div class="brand">⚡ Freelance Dashboard</div>
+  <nav class="nav">
+    <a href="./index.html">Dashboard</a>
+    <a href="./users.html">Users</a>
+    <a href="./posts.html">Posts</a>
+  </nav>
+  <div class="actions">
+    <button id="themeToggle" aria-label="Toggle theme" title="Light/Dark">🌓</button>
+  </div>
+</header>
+
+<div id="loader" class="loader hidden" aria-live="polite" aria-busy="true">
+  <div class="spinner"></div>
+</div>
+
+<main class="container">
+  <section class="cards">
+    <div class="card animate__animated animate__fadeInUp" id="card-users">
+      <h3>Users</h3>
+      <p class="stat" id="stat-users">--</p>
+      <a href="./users.html" class="btn">Manage Users</a>
+    </div>
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" id="card-posts">
+      <h3>Posts</h3>
+      <p class="stat" id="stat-posts">--</p>
+      <a href="./posts.html" class="btn">Browse Posts</a>
+    </div>
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" id="card-comments">
+      <h3>Comments</h3>
+      <p class="stat" id="stat-comments">--</p>
+      <a href="./posts.html#comments" class="btn">View Comments</a>
+    </div>
+  </section>
+</main>
+<footer class="app-footer">
+  <p>Built with HTML • CSS • Animate.css • jQuery • DataTables • Toastr • JSONPlaceholder</p>
+</footer>
+<script src="./assets/js/app.js"></script>
+
+<script src="./assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Freelance Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-V7M6qGQZxqW9v0zv5Kp5t7yQmV8lV9k9O+e9S4k2PqK1Yg2p8i8J7YF9lQz8s3q3Bq1p7gqgq+G5KNuXoE2AKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+</head>
+<body>
+<header class="app-header">
+  <div class="brand">⚡ Freelance Dashboard</div>
+  <nav class="nav">
+    <a href="./index.html">Dashboard</a>
+    <a href="./users.html">Users</a>
+    <a href="./posts.html">Posts</a>
+  </nav>
+  <div class="actions">
+    <button id="themeToggle" aria-label="Toggle theme" title="Light/Dark">🌓</button>
+  </div>
+</header>
+
+<div id="loader" class="loader hidden" aria-live="polite" aria-busy="true">
+  <div class="spinner"></div>
+</div>
+
+<main class="container">
+  <section class="section-header">
+    <h2>Posts</h2>
+    <div class="toolbar">
+      <button class="btn" id="addPostBtn">+ Add Post</button>
+    </div>
+  </section>
+
+  <table id="postsTable" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</main>
+
+<!-- Post Modal -->
+<div class="modal" id="postModal" aria-hidden="true" role="dialog" aria-labelledby="postModalTitle">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="postModalTitle">Add Post</h3>
+      <button class="close" data-close>&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="postForm">
+        <input type="hidden" id="postId" />
+        <label>Title<input type="text" id="postTitle" required></label>
+        <label>Body<textarea id="postBody" rows="5" required></textarea></label>
+        <label>User ID<input type="number" id="postUserId" required min="1"></label>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn secondary" data-close>Cancel</button>
+      <button class="btn" id="savePostBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Comments Modal -->
+<div class="modal" id="commentsModal" aria-hidden="true" role="dialog" aria-labelledby="commentsTitle">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="commentsTitle">Comments</h3>
+      <button class="close" data-close>&times;</button>
+    </div>
+    <div class="modal-body">
+      <ul id="commentsList" class="comments-list"></ul>
+    </div>
+    <div class="modal-footer">
+      <button class="btn secondary" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<footer class="app-footer">
+  <p>Built with HTML • CSS • Animate.css • jQuery • DataTables • Toastr • JSONPlaceholder</p>
+</footer>
+<script src="./assets/js/app.js"></script>
+
+<script src="./assets/js/posts.js"></script>
+</body>
+</html>
