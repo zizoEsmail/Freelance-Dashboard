@@ -69,9 +69,6 @@ posts.html         # Posts table
 - Toastr 2.1.x
 - Animate.css 4.x
 
-## 🖼️ Screenshots (optional)
-You can add screenshots of each page here for your repo.
-
 ---
 
 Made with care for a smooth UX and clean code.
